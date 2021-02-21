@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 
 export default function Weather(props) {
@@ -16,7 +17,7 @@ export default function Weather(props) {
     wind: Math.round(response.data.wind.speed),
     humidity: response.data.main.humidity,
     icon: `https://media.istockphoto.com/vectors/summer-sun-vector-icon-in-yellow-vector-id696357142?s=612x612`,
-    date: "Today",
+    date: new Date(response.data.dt * 1000),
     });
     
   }
@@ -61,12 +62,12 @@ export default function Weather(props) {
         </span>
       </div>
       <div className="col-7">
-        <img id="icon" src="{weatherData.icon}" width="75 px" />
+        <img id="icon" src={weatherData.icon} width="75 px" />
         <span id="description">{weatherData.description}</span>
       </div>
     </div>
     <div>
-      <h4 id="date">{weatherData.date}</h4>
+      <h4 id="date"><FormattedDate date={weatherData.date} /></h4>
       <div className="row">
         <div className="col-4">
           <span id="min-temp">17</span>° | <span id="max-temp">28</span>°
