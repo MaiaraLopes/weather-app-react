@@ -1,5 +1,6 @@
-.container {
-  font-family: "Ubuntu", sans-serif;
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .weather-app {
@@ -11,12 +12,6 @@
   background: #c2e2f5;
 }
 
-.wrapper {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-footer {
-  text-align: center;
-  font-size: smaller;
+#city {
+  color: #4b7bf5;
 }
