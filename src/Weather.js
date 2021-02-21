@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css"
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 
-export default function Weather() {
-    return (
-      <div>
+export default function Weather(props) {
+  const [weatherData, setweatherData] = useState({ ready: false });
+
+  function handleResponse(response) {
+    setweatherData({
+    ready: true,
+    temperature: Math.round(response.data.main.temp),
+    city: response.data.name,
+    description: response.data.weather[0].description,
+    wind: Math.round(response.data.wind.speed),
+    humidity: response.data.main.humidity,
+    icon: `https://media.istockphoto.com/vectors/summer-sun-vector-icon-in-yellow-vector-id696357142?s=612x612`,
+    date: "Today",
+    });
+    
+  }
+   if(weatherData.ready) {
+  return (
+            <div>
       <div className="row">
       <div className="col-5">
-        <h1 id="city">Brasília</h1>
+        <h1 id="city">{weatherData.city}</h1>
       </div>
       <div className="col">
         <form id="search-form">
@@ -32,7 +49,7 @@ export default function Weather() {
     </div>
         <div className="row">
       <div className="col-5">
-        <span id="temperature">25</span>
+        <span id="temperature">{weatherData.temperature}</span>
         <span id="units">
           <a href="#" id="celsius">
             {" "}
@@ -44,24 +61,32 @@ export default function Weather() {
         </span>
       </div>
       <div className="col-7">
-        <img id="icon" src="" width="75 px" />
-        <span id="description">Sunny</span>
+        <img id="icon" src="{weatherData.icon}" width="75 px" />
+        <span id="description">{weatherData.description}</span>
       </div>
     </div>
     <div>
-      <h4 id="date">17 January</h4>
+      <h4 id="date">{weatherData.date}</h4>
       <div className="row">
         <div className="col-4">
           <span id="min-temp">17</span>° | <span id="max-temp">28</span>°
         </div>
         <div className="col-4">
-          Wind: <span id="wind">12</span> km/h
+          Wind: <span id="wind">{weatherData.wind}</span> km/h
         </div>
         <div className="col-4">
-          Humidity: <span id="humidity">75</span>%
+          Humidity: <span id="humidity">{weatherData.humidity}</span>%
         </div>
       </div>
     </div>
   </div>
     );
+} else {
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=76c8b94d63a7e1828617006132974e2d&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+
+  return "Loading...";
 }
+}
+
+

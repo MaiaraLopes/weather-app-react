@@ -9,12 +9,12 @@ export default function App() {
       <div className="container">
         <div className="wrapper">
           <div className="weather-app">
-          <Weather />
+          <Weather defaultCity="London"/>
     </div>
     </div>
     </div> 
     <footer>
-       This project was coded by Maiara Lopes and is <a href="https://github.com/MaiaraLopes/final-project" target="_blank">open-sourced.
+       This project was coded by Maiara Lopes and is <a href="https://github.com/MaiaraLopes/final-project" target="_blank" rel="noreferrer">open-sourced.
      </a>
       </footer>
     </div>
