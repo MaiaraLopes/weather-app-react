@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Weather() {
     return (
+      <div>
       <div className="row">
       <div className="col-5">
         <h1 id="city">Brasília</h1>
@@ -61,6 +62,6 @@ export default function Weather() {
         </div>
       </div>
     </div>
-  
+  </div>
     );
 }

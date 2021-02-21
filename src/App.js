@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import Weather from "./Weather"; 
-import Form from "./Form";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
@@ -9,8 +9,7 @@ export default function App() {
       <div className="container">
         <div className="wrapper">
           <div className="weather-app">
-     <Form />
-     <Weather />
+          <Weather />
     </div>
     </div>
     </div> 
