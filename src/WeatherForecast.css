@@ -1,0 +1,11 @@
+.WeatherForecast canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.WeatherForecast {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+}
