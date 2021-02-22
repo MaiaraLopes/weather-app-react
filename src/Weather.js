@@ -18,7 +18,7 @@ export default function Weather(props) {
     description: response.data.weather[0].description,
     wind: Math.round(response.data.wind.speed),
     humidity: response.data.main.humidity,
-    icon: `https://media.istockphoto.com/vectors/summer-sun-vector-icon-in-yellow-vector-id696357142?s=612x612`,
+    icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     date: new Date(response.data.dt * 1000),
     });
     
