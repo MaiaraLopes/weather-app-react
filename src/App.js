@@ -5,10 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   return (
+    
     <div className="App">
-      <div className="container">
-        <div className="wrapper">
-          <div className="weather-app">
+    <div className="container">
+    <div className="wrapper">
+    <div className="weather-app">
+            <h1 className="title">Mai Weather</h1>
           <Weather defaultCity="London"/>
     </div>
     </div>

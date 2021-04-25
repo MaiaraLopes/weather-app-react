@@ -20,3 +20,9 @@ footer {
   text-align: center;
   font-size: smaller;
 }
+
+.title {
+  text-align: center;
+  font-family: "Jomhuria", cursive;
+  font-size: 60px;
+}
