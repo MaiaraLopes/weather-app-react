@@ -1,6 +1,6 @@
 # Mai Weather React App
 
-This is a [weather app](https://flamboyant-hypatia-bfdce3.netlify.app/) connected to an API that let's you search for a city and see the forecast live. You can change from Celsius to Fahrenheit.
+This is a [weather app](https://ml-weather-app-react.netlify.app) connected to an API that let's you search for a city and see the forecast live. You can change from Celsius to Fahrenheit.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
